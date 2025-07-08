@@ -24,6 +24,11 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 RUN python3 -m pip install --upgrade pip && \
     python3 -m venv /opt/python3/venv/base
 
+RUN pip install --no-cache-dir \
+    transformers \
+    pandas \ 
+    datasets 
+    
 COPY requirements.txt /opt/python3/venv/base/
 RUN /opt/python3/venv/base/bin/python3 -m pip install --no-cache-dir -r /opt/python3/venv/base/requirements.txt
 
