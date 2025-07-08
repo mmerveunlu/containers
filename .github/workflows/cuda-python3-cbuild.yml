@@ -3,12 +3,12 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - containers/cuda-python3/Dockerfile
+      - containers/Dockerfile
       - .github/workflows/cuda-python3-cbuild.yml # Self-trigger
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: bouncmpe/cuda-python3
+  IMAGE_NAME: mmerveunlu/cuda-python3
   VERSION: latest
 
 jobs:
