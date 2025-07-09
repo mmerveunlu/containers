@@ -1,10 +1,13 @@
 # Base image with CUDA, cuDNN, PyTorch pre-installed
-FROM nvcr.io/nvidia/pytorch:23.12-py3
+FROM pytorch/pytorch:2.2.0-cuda11.8-cudnn8-runtime
 
 LABEL maintainer="Merve Unlu"
 
 ENV LANG=C.UTF-8 \
     LC_ALL=C.UTF-8
+    
+RUN apt-get update && apt-get install -y ... \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Upgrade pip and install Python libraries
 RUN pip install --no-cache-dir --upgrade pip && \
