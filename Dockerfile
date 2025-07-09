@@ -12,7 +12,8 @@ RUN pip install --no-cache-dir --upgrade pip && \
         transformers \
         pandas \
         datasets \
-        evaluate
+        evaluate \
+        accelerate>=0.26.0 
 
 # Optional: install additional dependencies from requirements.txt if you have one
 COPY requirements.txt /tmp/requirements.txt
