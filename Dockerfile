@@ -11,7 +11,8 @@ RUN pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir \
         transformers \
         pandas \
-        datasets
+        datasets \
+        evaluate
 
 # Optional: install additional dependencies from requirements.txt if you have one
 COPY requirements.txt /tmp/requirements.txt
