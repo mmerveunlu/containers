@@ -1,7 +1,7 @@
 # Local Usage:
 # 
 
-FROM nvidia/cuda:12.2.0-devel-ubuntu22.04
+FROM nvcr.io/nvidia/pytorch:23.12-py3
 
 LABEL maintainer="Merve Unlu"
 
