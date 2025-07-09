@@ -1,39 +1,24 @@
-# Local Usage:
-# 
-
+# Base image with CUDA, cuDNN, PyTorch pre-installed
 FROM nvcr.io/nvidia/pytorch:23.12-py3
 
 LABEL maintainer="Merve Unlu"
 
-ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
+ENV LANG=C.UTF-8 \
+    LC_ALL=C.UTF-8
 
-RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get -y install --no-install-recommends \
-        git \
-        wget \
-        cmake \
-        ninja-build \
-        build-essential \
-        python3 \
-        python3-dev \
-        python3-pip \
-        python3-venv \
-        python-is-python3 \
-    && apt-get autoremove -y && apt-get clean -y && rm -rf /var/lib/apt/lists/* 
+# Upgrade pip and install Python libraries
+RUN pip install --no-cache-dir --upgrade pip && \
+    pip install --no-cache-dir \
+        transformers \
+        pandas \
+        datasets
 
-RUN python3 -m pip install --upgrade pip && \
-    python3 -m venv /opt/python3/venv/base
+# Optional: install additional dependencies from requirements.txt if you have one
+COPY requirements.txt /tmp/requirements.txt
+RUN pip install --no-cache-dir -r /tmp/requirements.txt || true
 
-RUN pip install --no-cache-dir \
-    transformers \
-    pandas \ 
-    datasets 
-    
-COPY requirements.txt /opt/python3/venv/base/
-RUN /opt/python3/venv/base/bin/python3 -m pip install --no-cache-dir -r /opt/python3/venv/base/requirements.txt
-
+# Optional entrypoint script
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
-# Set entrypoint to bash
 ENTRYPOINT ["/entrypoint.sh"]
