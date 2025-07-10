@@ -1,5 +1,5 @@
 # Base image with CUDA, cuDNN, PyTorch pre-installed
-FROM pytorch/pytorch:2.2.0-cuda11.8-cudnn8-runtime
+FROM pytorch/pytorch:2.7.1-cuda11.8-cudnn9-runtime
 
 LABEL maintainer="Merve Unlu"
 
