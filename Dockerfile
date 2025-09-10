@@ -13,6 +13,7 @@ RUN pip install --no-cache-dir --upgrade pip && \
         pandas \
         datasets \
         evaluate \
+        protobuf \
         accelerate>=0.26.0 
 
 # Optional: install additional dependencies from requirements.txt if you have one
