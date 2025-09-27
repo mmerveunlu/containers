@@ -16,6 +16,7 @@ RUN pip install --no-cache-dir --upgrade pip && \
         protobuf \
         tiktoken \ 
         sentencepiece \
+        vllm \
         accelerate>=0.26.0 
 
 # Optional: install additional dependencies from requirements.txt if you have one
