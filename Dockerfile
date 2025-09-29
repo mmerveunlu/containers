@@ -20,6 +20,8 @@ RUN pip install --no-cache-dir --upgrade pip && \
         sentencepiece \
         vllm \
         accelerate>=0.26.0 
+        
+RUN pip install --upgrade vllm 
 
 # Optional: install additional dependencies from requirements.txt if you have one
 COPY requirements.txt /tmp/requirements.txt
