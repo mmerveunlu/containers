@@ -19,7 +19,8 @@ RUN pip install --no-cache-dir --upgrade pip && \
         tiktoken \ 
         sentencepiece \
         vllm \
-        accelerate>=0.26.0 
+        accelerate>=0.26.0 \
+        ragas 
         
 RUN pip install --upgrade vllm 
 
