@@ -20,7 +20,7 @@ RUN pip install --no-cache-dir --upgrade pip && \
         sentencepiece \
         vllm \
         accelerate>=0.26.0 \
-        ragas 
+        sentence_transformers
         
 RUN pip install --upgrade vllm 
 
