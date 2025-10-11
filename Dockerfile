@@ -11,6 +11,7 @@ RUN apt-get update && apt-get install -y build-essential
 # Upgrade pip and install Python libraries
 RUN pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir \
+        triton \
         transformers \
         pandas \
         datasets \
@@ -21,8 +22,8 @@ RUN pip install --no-cache-dir --upgrade pip && \
         vllm \
         accelerate>=0.26.0 \
         sentence_transformers \
-        triton
-        
+
+RUN pip install --upgrade transformers 
 RUN pip install --upgrade vllm 
 
 # Optional: install additional dependencies from requirements.txt if you have one
