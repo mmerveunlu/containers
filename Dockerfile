@@ -11,7 +11,6 @@ RUN apt-get update && apt-get install -y build-essential
 # Upgrade pip and install Python libraries
 RUN pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir \
-        triton \
         transformers \
         pandas \
         datasets \
@@ -21,7 +20,7 @@ RUN pip install --no-cache-dir --upgrade pip && \
         sentencepiece \
         vllm \
         accelerate>=0.26.0 \
-        sentence_transformers \
+        sentence_transformers 
 
 RUN pip install --upgrade transformers 
 RUN pip install --upgrade vllm 
