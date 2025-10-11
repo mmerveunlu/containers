@@ -18,12 +18,9 @@ RUN pip install --no-cache-dir --upgrade pip && \
         protobuf \
         tiktoken \ 
         sentencepiece \
-        vllm \
-        accelerate>=0.26.0 \
-        sentence_transformers 
-
+        accelerate>=0.26.0 
+        
 RUN pip install --upgrade transformers 
-RUN pip install --upgrade vllm 
 
 # Optional: install additional dependencies from requirements.txt if you have one
 COPY requirements.txt /tmp/requirements.txt
