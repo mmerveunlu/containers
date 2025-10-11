@@ -20,7 +20,8 @@ RUN pip install --no-cache-dir --upgrade pip && \
         sentencepiece \
         vllm \
         accelerate>=0.26.0 \
-        sentence_transformers
+        sentence_transformers \
+        triton
         
 RUN pip install --upgrade vllm 
 
