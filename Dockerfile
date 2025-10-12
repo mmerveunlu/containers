@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y build-essential
 # Upgrade pip and install Python libraries
 RUN pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir \
-        transformers=4.17.0 \ 
+        transformers \ 
         pandas \
         datasets \
         evaluate \
