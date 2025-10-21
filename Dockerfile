@@ -10,15 +10,15 @@ RUN apt-get update && apt-get install -y build-essential
 
 # Upgrade pip and install Python libraries
 RUN pip install --no-cache-dir --upgrade pip && \
-    pip install --no-cache-dir \
-        transformers=4.56.2 \ 
+    pip install --no-cache-dir \ 
         pandas \
         datasets \
         evaluate \
         protobuf \
         tiktoken \ 
         sentencepiece \
-        accelerate>=0.26.0  
+        accelerate>=0.26.0  \
+        transformers==4.56.2 
 
 # Optional: install additional dependencies from requirements.txt if you have one
 COPY requirements.txt /tmp/requirements.txt
