@@ -11,6 +11,7 @@ RUN apt-get update && apt-get install -y build-essential
 # Upgrade pip and install Python libraries
 RUN pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir \
+        transformers \ 
         pandas \
         datasets \
         evaluate \
@@ -18,7 +19,6 @@ RUN pip install --no-cache-dir --upgrade pip && \
         tiktoken \ 
         sentencepiece \
         accelerate>=0.26.0  
-RUN pip install git+https://github.com/huggingface/transformer
 
 # Optional: install additional dependencies from requirements.txt if you have one
 COPY requirements.txt /tmp/requirements.txt
