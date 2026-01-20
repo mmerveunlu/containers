@@ -6,7 +6,11 @@ LABEL maintainer="Merve Unlu"
 ENV LANG=C.UTF-8 \
     LC_ALL=C.UTF-8
     
-RUN apt-get update && apt-get install -y build-essential
+# System dependencies (ffmpeg is REQUIRED for Whisper)
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    ffmpeg \
+    && rm -rf /var/lib/apt/lists/*
 
 # Upgrade pip and install Python libraries
 RUN pip install --no-cache-dir --upgrade pip && \
