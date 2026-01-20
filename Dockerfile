@@ -5,6 +5,8 @@ LABEL maintainer="Merve Unlu"
 
 ENV LANG=C.UTF-8 \
     LC_ALL=C.UTF-8
+
+ENV WHISPER_USE_TRITON=0
     
 # System dependencies (ffmpeg is REQUIRED for Whisper)
 RUN apt-get update && apt-get install -y \
