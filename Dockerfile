@@ -26,7 +26,7 @@ RUN pip install --no-cache-dir --upgrade pip && \
         accelerate>=0.26.0  \
         transformers==4.56.2 \ 
         openai-whisper \
-        sklearn
+        scikit-learn
 
 # Optional: install additional dependencies from requirements.txt if you have one
 COPY requirements.txt /tmp/requirements.txt
