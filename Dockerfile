@@ -25,7 +25,8 @@ RUN pip install --no-cache-dir --upgrade pip && \
         sentencepiece \
         accelerate>=0.26.0  \
         transformers==4.56.2 \ 
-        openai-whisper
+        openai-whisper \
+        sklearn
 
 # Optional: install additional dependencies from requirements.txt if you have one
 COPY requirements.txt /tmp/requirements.txt
